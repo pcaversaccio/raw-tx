@@ -23,6 +23,8 @@ async function main() {
   //    - accessList?: AccessListish
   //    - maxPriorityFeePerGas?: BigNumberish // EIP-1559; Type 2
   //    - maxFeePerGas?: BigNumberish // EIP-1559; Type 2
+
+  // Example payload - configure according to your needs
   const transaction = {
     to: "0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD",
     value: ethers.parseEther("0"),

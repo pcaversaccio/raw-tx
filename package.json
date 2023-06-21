@@ -12,7 +12,7 @@
   "scripts": {
     "generate": "ts-node ./index.ts",
     "lint": "eslint --ext .ts .",
-    "prettier": "npx prettier -w **/*.{js,ts,md,json,yml,yaml}"
+    "prettier": "npx prettier -w **/*.{ts,md,json,yml,yaml}"
   },
   "devDependencies": {
     "@ethersproject/transactions": "^5.7.0",

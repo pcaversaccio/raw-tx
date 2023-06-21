@@ -1,0 +1,30 @@
+{
+  "name": "raw-tx",
+  "version": "1.0.0",
+  "description": "A script to generate a signed raw transaction with ethers.",
+  "author": "Pascal Marco Caversaccio <pascal.caversaccio@hotmail.ch>",
+  "license": "WTFPL",
+  "main": "index.ts",
+  "keywords": [
+    "raw-transaction",
+    "ethers"
+  ],
+  "scripts": {
+    "generate": "ts-node ./index.ts",
+    "lint": "eslint --ext .ts .",
+    "prettier": "npx prettier -w **/*.{js,ts,md,json,yml,yaml}"
+  },
+  "devDependencies": {
+    "@ethersproject/transactions": "^5.7.0",
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "ethers": "^6.6.0",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}

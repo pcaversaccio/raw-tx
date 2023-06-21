@@ -4,10 +4,15 @@ import { serialize } from "@ethersproject/transactions";
 
 dotenv.config();
 
-async function main() {
+export async function main() {
   const privateKey =
-    process.env.PRIVATE_KEY !== undefined ? process.env.PRIVATE_KEY : ""; // Load your private key via a `.env` file
-  const wallet = new ethers.Wallet(privateKey);
+    process.env.PRIVATE_KEY !== undefined ? process.env.PRIVATE_KEY : ""; // load your private key via a `.env` file
+  const provider =
+    process.env.PROVIDER !== undefined ? process.env.PROVIDER : ""; // load your provider via a `.env` file
+  const wallet = new ethers.Wallet(
+    privateKey,
+    new ethers.JsonRpcProvider(provider)
+  );
 
   console.log("Using wallet address " + wallet.address);
 

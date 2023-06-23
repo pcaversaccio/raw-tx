@@ -14,7 +14,7 @@ export async function main() {
     new ethers.JsonRpcProvider(provider)
   );
 
-  console.log("Using wallet address " + wallet.address);
+  console.log("Using wallet address " + wallet.address, "\n");
 
   // A submitted transaction includes the following information:
   //    - to?: string

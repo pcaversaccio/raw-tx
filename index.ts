@@ -48,11 +48,9 @@ export async function main() {
   const signedRawTransaction = await wallet.signTransaction(transaction);
 
   // print the raw transaction details
-  console.log("rawTx: " + rawTransaction);
-  console.log();
-  console.log("rawTxHash: " + rawTxHash);
-  console.log();
-  console.log("signedRawTransaction: " + signedRawTransaction);
+  console.log("rawTx: " + rawTransaction, "\n");
+  console.log("rawTxHash: " + rawTxHash, "\n");
+  console.log("signedRawTransaction: " + signedRawTransaction, "\n");
 }
 
 main().catch((error) => {

@@ -15,7 +15,6 @@
     "prettier": "npx prettier -w **/*.{ts,md,json,yml,yaml}"
   },
   "devDependencies": {
-    "@ethersproject/transactions": "^5.7.0",
     "@types/node": "^20.3.2",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",

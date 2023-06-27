@@ -3,6 +3,7 @@ import { ethers, Transaction } from "ethers";
 
 dotenv.config();
 
+// Colour codes for terminal prints
 const RESET = "\x1b[0m";
 const GREEN = "\x1b[32m";
 
@@ -16,9 +17,12 @@ export async function main() {
     new ethers.JsonRpcProvider(provider)
   );
 
-  console.log("Using wallet address: " + wallet.address, "\n");
+  console.log(
+    "Using wallet address: " + `${GREEN}${wallet.address}${RESET}`,
+    "\n"
+  );
 
-  // Example payload - configure according to your needs
+  // example payload - configure according to your needs
   const tx = new Transaction();
   tx.to = "0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD";
   tx.value = ethers.parseEther("0");
@@ -56,7 +60,7 @@ export async function main() {
   console.log("- typeName: " + `${GREEN}${signedTx.typeName}${RESET}`);
   console.log("- accessList: " + `${GREEN}${signedTx.accessList}${RESET}`);
   console.log("- chainId: " + `${GREEN}${signedTx.chainId}${RESET}`);
-  console.log("- serialised: " + `${GREEN}${signedTx.serialized}${RESET}`);
+  console.log("- serialised: " + `${GREEN}${signedTx.serialized}${RESET}`); // use this output to broadcast a raw transaction using e.g. Etherscan
   console.log(
     "- unsignedSerialised: " + `${GREEN}${signedTx.unsignedSerialized}${RESET}`
   );

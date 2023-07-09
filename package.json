@@ -13,7 +13,7 @@
     "generate": "ts-node ./index.ts",
     "lint": "eslint --ext .ts .",
     "prettier:check": "npx prettier -c **/*.{ts,md,json,yml,yaml}",
-    "prettier:fix": "prettier -w **/*.{ts,md,json,yml,yaml}"
+    "prettier:fix": "npx prettier -w **/*.{ts,md,json,yml,yaml}"
   },
   "devDependencies": {
     "@types/node": "^20.4.1",

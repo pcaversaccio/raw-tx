@@ -10,8 +10,8 @@
     "ethers"
   ],
   "scripts": {
-    "generate": "ts-node ./index.ts",
-    "lint": "eslint --ext .ts .",
+    "generate": "npx ts-node ./index.ts",
+    "lint": "npx eslint --ext .ts .",
     "prettier:check": "npx prettier -c **/*.{ts,md,json,yml,yaml}",
     "prettier:fix": "npx prettier -w **/*.{ts,md,json,yml,yaml}"
   },

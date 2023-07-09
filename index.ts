@@ -14,12 +14,12 @@ export async function main() {
     process.env.PROVIDER !== undefined ? process.env.PROVIDER : ""; // load your provider via a `.env` file
   const wallet = new ethers.Wallet(
     privateKey,
-    new ethers.JsonRpcProvider(provider)
+    new ethers.JsonRpcProvider(provider),
   );
 
   console.log(
     "Using wallet address: " + `${GREEN}${wallet.address}${RESET}`,
-    "\n"
+    "\n",
   );
 
   // example payload - configure according to your needs
@@ -48,7 +48,7 @@ export async function main() {
   console.log("- maxFeePerGas: " + `${GREEN}${signedTx.maxFeePerGas}${RESET}`);
   console.log(
     "- maxPriorityFeePerGas: " +
-      `${GREEN}${signedTx.maxPriorityFeePerGas}${RESET}`
+      `${GREEN}${signedTx.maxPriorityFeePerGas}${RESET}`,
   );
   console.log("- hash: " + `${GREEN}${signedTx.hash}${RESET}`);
   console.log("- unsignedHash: " + `${GREEN}${signedTx.unsignedHash}${RESET}`);
@@ -62,7 +62,7 @@ export async function main() {
   console.log("- chainId: " + `${GREEN}${signedTx.chainId}${RESET}`);
   console.log("- serialised: " + `${GREEN}${signedTx.serialized}${RESET}`); // use this output to broadcast a raw transaction using e.g. Etherscan
   console.log(
-    "- unsignedSerialised: " + `${GREEN}${signedTx.unsignedSerialized}${RESET}`
+    "- unsignedSerialised: " + `${GREEN}${signedTx.unsignedSerialized}${RESET}`,
   );
   console.log("- v: " + `${GREEN}${signedTx.signature?.v}${RESET}`);
   console.log("- r: " + `${GREEN}${signedTx.signature?.r}${RESET}`);

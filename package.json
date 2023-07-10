@@ -11,14 +11,15 @@
   ],
   "scripts": {
     "generate": "npx ts-node ./index.ts",
-    "lint": "npx eslint --ext .ts .",
     "prettier:check": "npx prettier -c **/*.{ts,md,json,yml,yaml}",
-    "prettier:fix": "npx prettier -w **/*.{ts,md,json,yml,yaml}"
+    "prettier:fix": "npx prettier -w **/*.{ts,md,json,yml,yaml}",
+    "lint:check": "npm run prettier:check && npx eslint --ext .ts .",
+    "lint:fix": "npm run prettier:fix && npx eslint --ext .ts . --fix"
   },
   "devDependencies": {
     "@types/node": "^20.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",

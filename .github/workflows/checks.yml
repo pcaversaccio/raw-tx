@@ -41,11 +41,8 @@ jobs:
       - name: Install Yarn project with a clean slate
         run: yarn install --prefer-offline --frozen-lockfile
 
-      - name: Prettier
-        run: yarn prettier:check
-
-      - name: Lint
-        run: yarn lint
+      - name: Prettier and lint
+        run: npm run lint:check
 
   codespell:
     runs-on: ${{ matrix.os }}

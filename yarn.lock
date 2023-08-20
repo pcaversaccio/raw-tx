@@ -149,10 +149,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.15.13.tgz#f64277c341150c979e42b00e4ac289290c9df469"
   integrity sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q==
 
-"@types/node@^20.5.0":
-  version "20.5.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.0.tgz#7fc8636d5f1aaa3b21e6245e97d56b7f56702313"
-  integrity sha512-Mgq7eCtoTjT89FqNoTzzXg2XvCi5VMhRV6+I2aYanc6kQCBImeNaAYRs/DyoVqk1YEUJK5gN9VO7HRIdz4Wo3Q==
+"@types/node@^20.5.1":
+  version "20.5.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.1.tgz#178d58ee7e4834152b0e8b4d30cbfab578b9bb30"
+  integrity sha512-4tT2UrL5LBqDwoed9wZ6N3umC4Yhz3W3FloMmiiG4JwmUJWpie0c7lcnUNd4gtMKuDEO4wRVS8B6Xa0uMRsMKg==
 
 "@types/semver@^7.5.0":
   version "7.5.0"
@@ -943,9 +943,9 @@ to-regex-range@^5.0.1:
     is-number "^7.0.0"
 
 ts-api-utils@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.0.1.tgz#8144e811d44c749cd65b2da305a032510774452d"
-  integrity sha512-lC/RGlPmwdrIBFTX59wwNzqh7aR2otPNPR/5brHZm/XKFYKsfqxihXUe9pU3JI+3vGkl+vyCoNNnPhJn3aLK1A==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.0.2.tgz#7c094f753b6705ee4faee25c3c684ade52d66d99"
+  integrity sha512-Cbu4nIqnEdd+THNEsBdkolnOXhg0I8XteoHaEKgvsxpsbWda4IsUut2c187HxywQCvveojow0Dgw/amxtSKVkQ==
 
 ts-node@^10.9.1:
   version "10.9.1"

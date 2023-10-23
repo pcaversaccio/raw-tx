@@ -1,14 +1,16 @@
 import * as fs from "fs";
 import path from "path";
 import * as dotenv from "dotenv";
+
 import { ethers, Transaction } from "ethers";
 
 dotenv.config();
 
-// Colour codes for terminal prints
+// colour codes for terminal prints
 const RESET = "\x1b[0m";
 const GREEN = "\x1b[32m";
 
+// the target directory for saving the transaction request
 const dir = path.join(__dirname, "out");
 
 export async function sign() {

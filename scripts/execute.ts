@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 
 import { ethers } from "ethers";
 // import the serialised signed transaction generated via `sign.ts`
-import signedTx from "./out/transaction_request.json";
+import signedTx from "./out/signed_serialised_transaction.json";
 
 dotenv.config();
 

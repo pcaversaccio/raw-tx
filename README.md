@@ -29,7 +29,7 @@ Configure the placeholder payload in [`sign`](./scripts/sign.ts) according to yo
 yarn generate
 ```
 
-This will print all raw transaction details to your terminal. Use the output `signedTx.serialized` to broadcast a transaction e.g. with services like [pushTx](https://etherscan.io/pushTx). You can also use the automatically saved serialised signed transaction in `transaction_request.json` (in the `scripts/out` directory) via `yarn execute` as explained in the next section.
+This will print all raw transaction details to your terminal. Use the output `signedTx.serialized` to broadcast a transaction e.g. with services like [pushTx](https://etherscan.io/pushTx). You can also use the automatically saved serialised signed transaction in `signed_serialised_transaction.json` (in the `scripts/out` directory) via `yarn execute` as explained in the next section.
 
 ## Execute a Signed Raw Transaction
 

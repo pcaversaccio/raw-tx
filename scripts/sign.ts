@@ -49,7 +49,7 @@ export async function sign() {
     fs.mkdirSync(dir);
   }
   const saveDir = path.normalize(
-    path.join(__dirname, "out", "transaction_request.json"),
+    path.join(__dirname, "out", "signed_serialised_transaction.json"),
   );
   fs.writeFileSync(saveDir, JSON.stringify(signedTx.serialized));
 

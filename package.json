@@ -1,7 +1,7 @@
 {
   "name": "raw-tx",
   "version": "1.0.0",
-  "description": "A script to generate and execute a signed raw transaction with ethers.",
+  "description": "Two scripts to generate and execute a signed raw transaction with ethers.",
   "author": "Pascal Marco Caversaccio <pascal.caversaccio@hotmail.ch>",
   "license": "WTFPL",
   "main": "sign.ts",

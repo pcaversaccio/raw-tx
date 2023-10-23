@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": true
+  },
+  "files": ["./scripts/sign.ts", "./scripts/execute.ts"]
+}

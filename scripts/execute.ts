@@ -11,6 +11,7 @@ dotenv.config();
 // colour codes for terminal prints
 const RESET = "\x1b[0m";
 const GREEN = "\x1b[32m";
+const RED = "\x1b[31m";
 
 // the target directory for saving the transaction response/error
 const dir = path.join(__dirname, "out");
@@ -34,6 +35,11 @@ export async function execute() {
       path.join(__dirname, "out", "transaction_receipt.json"),
     );
     fs.writeFileSync(saveDir, JSON.stringify(transactionReceipt));
+
+    console.log(
+      `\n${GREEN}Transaction has been successfully broadcasted!${RESET}`,
+    );
+    console.log(`Transaction details written to: ${GREEN}${saveDir}${RESET}\n`);
   } catch (err) {
     // save the transaction error in a JSON file
     if (!fs.existsSync(dir)) {
@@ -43,6 +49,9 @@ export async function execute() {
       path.join(__dirname, "out", "transaction_error.json"),
     );
     fs.writeFileSync(saveDir, JSON.stringify(err));
+
+    console.log(`\n${RED}Transaction broadcasting failed!${RESET}`);
+    console.log(`Error details written to: ${RED}${saveDir}${RESET}\n`);
   }
 }
 

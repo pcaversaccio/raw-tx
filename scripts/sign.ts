@@ -1,3 +1,5 @@
+import * as fs from "fs";
+import path from "path";
 import * as dotenv from "dotenv";
 import { ethers, Transaction } from "ethers";
 
@@ -7,7 +9,9 @@ dotenv.config();
 const RESET = "\x1b[0m";
 const GREEN = "\x1b[32m";
 
-export async function main() {
+const dir = path.join(__dirname, "out");
+
+export async function sign() {
   const privateKey =
     process.env.PRIVATE_KEY !== undefined ? process.env.PRIVATE_KEY : ""; // load your private key via a `.env` file
   const provider =
@@ -37,6 +41,15 @@ export async function main() {
 
   // sign the transaction
   const signedTx = Transaction.from(await wallet.signTransaction(tx));
+
+  // save the transaction request as JSON file
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+  const saveDir = path.normalize(
+    path.join(__dirname, "out", "transaction_request.json"),
+  );
+  fs.writeFileSync(saveDir, JSON.stringify(signedTx));
 
   // print the raw transaction details
   console.log("Raw Transaction Details", "\n");
@@ -69,7 +82,7 @@ export async function main() {
   console.log("- s: " + `${GREEN}${signedTx.signature?.s}${RESET}`);
 }
 
-main().catch((error) => {
+sign().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

@@ -4,13 +4,14 @@
   "description": "A script to generate a signed raw transaction with ethers.",
   "author": "Pascal Marco Caversaccio <pascal.caversaccio@hotmail.ch>",
   "license": "WTFPL",
-  "main": "index.ts",
+  "main": "sign.ts",
   "keywords": [
     "raw-transaction",
     "ethers"
   ],
   "scripts": {
-    "generate": "npx ts-node ./index.ts",
+    "generate": "npx ts-node ./scripts/sign.ts",
+    "execute": "npx ts-node ./scripts/execute.ts",
     "prettier:check": "npx prettier -c **/*.{ts,md,json,yml,yaml}",
     "prettier:fix": "npx prettier -w **/*.{ts,md,json,yml,yaml}",
     "lint:check": "npm run prettier:check && npx eslint --ext .ts .",

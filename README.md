@@ -23,10 +23,18 @@ yarn install
 
 ## Generate a Signed Raw Transaction
 
-Configure the placeholder payload in [script](./index.ts) according to your needs and run:
+Configure the placeholder payload in [`sign`](./scripts/sign.ts) according to your needs and run:
 
 ```console
 yarn generate
 ```
 
 This will print all raw transaction details to your terminal. Use the output `signedTx.serialized` to broadcast a transaction e.g. with services like [pushTx](https://etherscan.io/pushTx).
+
+## Execute a Signed Raw Transaction
+
+Configure your RPC provider in [`execute`](./scripts/execute.ts) according to your needs and run:
+
+```console
+yarn execute
+```

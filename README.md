@@ -3,7 +3,7 @@
 [![Sanity checks](https://github.com/pcaversaccio/raw-tx/actions/workflows/checks.yml/badge.svg)](https://github.com/pcaversaccio/raw-tx/actions/workflows/checks.yml)
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-blue.svg)](http://www.wtfpl.net/about)
 
-A [script](./index.ts) to generate a signed raw transaction with [ethers](https://docs.ethers.org/v6).
+A script to [generate](./scripts/sign.ts) and [execute](./scripts/execute.ts) a signed raw transaction with [ethers](https://docs.ethers.org/v6).
 
 ## Installation
 
@@ -39,4 +39,4 @@ Configure your RPC provider in [`execute`](./scripts/execute.ts) according to yo
 yarn execute
 ```
 
-If the transaction is successful, it saves a file `transaction_request.json` or in case of an failure a file `transaction_error.json` in the `scripts/out` directory.
+If the transaction is successful, it saves a file `transaction_receipt.json` or in case of an failure a file `transaction_error.json` in the `scripts/out` directory.

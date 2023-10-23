@@ -21,6 +21,15 @@ After having installed Yarn, simply run:
 yarn install
 ```
 
+## `.env` File
+
+Create a `.env` file in the root directory and place the private key of your wallet used for signing in the variable `PRIVATE_KEY` and the RPC provider for the transaction in the variable `RPC_PROVIDER`. Example:
+
+```txt
+PRIVATE_KEY=abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1
+RPC_PROVIDER=https://rpc.ankr.com/eth_goerli
+```
+
 ## Generate a Signed Raw Transaction
 
 Configure the placeholder payload in [`sign`](./scripts/sign.ts) according to your needs and run:

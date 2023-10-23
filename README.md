@@ -39,4 +39,4 @@ Configure your RPC provider in [`execute`](./scripts/execute.ts) according to yo
 yarn execute
 ```
 
-If the transaction is successful, it saves a file `transaction_receipt.json` or in case of an failure a file `transaction_error.json` in the `scripts/out` directory.
+If the transaction is successful, it saves a file `transaction_receipt.json` or in case of a failure a file `transaction_error.json` in the `scripts/out` directory.

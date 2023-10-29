@@ -41,6 +41,15 @@ export async function sign() {
     tx.nonce = await provider.getTransactionCount(wallet.getAddress());
     tx.type = 2;
     tx.chainId = 0x5;
+    tx.accessList = [
+      {
+        address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        storageKeys: [
+          "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "0x0000000000000000000000000000000000000000000000000000000000000003",
+        ],
+      },
+    ];
 
     // sign the transaction
     const signedTx = Transaction.from(await wallet.signTransaction(tx));
@@ -83,7 +92,9 @@ export async function sign() {
     console.log("- value: " + `${GREEN}${signedTx.value}${RESET}`);
     console.log("- type: " + `${GREEN}${signedTx.type}${RESET}`);
     console.log("- typeName: " + `${GREEN}${signedTx.typeName}${RESET}`);
-    console.log("- accessList: " + `${GREEN}${signedTx.accessList}${RESET}`);
+    console.log(
+      "- accessList (addresses): " + `${GREEN}${signedTx.accessList}${RESET}`,
+    );
     console.log("- chainId: " + `${GREEN}${signedTx.chainId}${RESET}`);
     console.log("- serialised: " + `${GREEN}${signedTx.serialized}${RESET}`); // use this output to broadcast a raw transaction using e.g. Etherscan
     console.log(

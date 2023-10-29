@@ -92,9 +92,12 @@ export async function sign() {
     console.log("- value: " + `${GREEN}${signedTx.value}${RESET}`);
     console.log("- type: " + `${GREEN}${signedTx.type}${RESET}`);
     console.log("- typeName: " + `${GREEN}${signedTx.typeName}${RESET}`);
-    console.log(
-      "- accessList (addresses): " + `${GREEN}${signedTx.accessList}${RESET}`,
-    );
+    if (signedTx.accessList != null && signedTx.accessList.length != 0) {
+      console.log("- accessList:");
+      console.log(signedTx.accessList.slice());
+    } else {
+      console.log("- accessList: " + `${GREEN}${null}${RESET}`);
+    }
     console.log("- chainId: " + `${GREEN}${signedTx.chainId}${RESET}`);
     console.log("- serialised: " + `${GREEN}${signedTx.serialized}${RESET}`); // use this output to broadcast a raw transaction using e.g. Etherscan
     console.log(

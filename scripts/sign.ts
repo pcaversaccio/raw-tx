@@ -94,7 +94,7 @@ export async function sign() {
     console.log("- typeName: " + `${GREEN}${signedTx.typeName}${RESET}`);
     if (signedTx.accessList != null && signedTx.accessList.length != 0) {
       console.log("- accessList:");
-      console.log(signedTx.accessList.slice());
+      console.log(signedTx.accessList);
     } else {
       console.log("- accessList: " + `${GREEN}${null}${RESET}`);
     }

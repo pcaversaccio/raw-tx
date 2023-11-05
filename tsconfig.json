@@ -4,8 +4,11 @@
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "declaration": true
+    "outDir": "dist",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
   },
   "files": ["./scripts/sign.ts", "./scripts/execute.ts"]
 }

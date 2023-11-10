@@ -31,9 +31,7 @@ export async function execute() {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
-    const saveDir = path.normalize(
-      path.join(__dirname, "out", "transaction_receipt.json"),
-    );
+    const saveDir = path.normalize(path.join(dir, "transaction_receipt.json"));
     fs.writeFileSync(saveDir, JSON.stringify(transactionReceipt));
 
     console.log(
@@ -45,9 +43,7 @@ export async function execute() {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
-    const saveDir = path.normalize(
-      path.join(__dirname, "out", "transaction_error.json"),
-    );
+    const saveDir = path.normalize(path.join(dir, "transaction_error.json"));
     fs.writeFileSync(saveDir, JSON.stringify(err));
 
     console.log(`\n${RED}Transaction broadcasting failed!${RESET}`);

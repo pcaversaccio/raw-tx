@@ -59,7 +59,7 @@ export async function sign() {
       fs.mkdirSync(dir);
     }
     const saveDir = path.normalize(
-      path.join(__dirname, "out", "signed_serialised_transaction.json"),
+      path.join(dir, "signed_serialised_transaction.json"),
     );
     fs.writeFileSync(saveDir, JSON.stringify(signedTx.serialized));
 
@@ -113,7 +113,7 @@ export async function sign() {
       fs.mkdirSync(dir);
     }
     const saveDir = path.normalize(
-      path.join(__dirname, "out", "signing_attempt_error.json"),
+      path.join(dir, "signing_attempt_error.json"),
     );
     fs.writeFileSync(saveDir, JSON.stringify(err));
 

@@ -1,9 +1,9 @@
 # Ethereum Raw Transaction Signing Script
 
 [![👮‍♂️ Sanity checks](https://github.com/pcaversaccio/raw-tx/actions/workflows/checks.yml/badge.svg)](https://github.com/pcaversaccio/raw-tx/actions/workflows/checks.yml)
-[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-blue.svg)](http://www.wtfpl.net/about)
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-blue.svg)](http://www.wtfpl.net/about/)
 
-Two scripts to [generate](./scripts/sign.ts) and [execute](./scripts/execute.ts) a signed raw transaction with [ethers](https://docs.ethers.org/v6).
+Two scripts to [generate](./scripts/sign.ts) and [execute](./scripts/execute.ts) a signed raw transaction with [ethers](https://docs.ethers.org/v6/).
 
 ## Installation
 

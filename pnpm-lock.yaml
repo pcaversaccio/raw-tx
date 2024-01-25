@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   "@types/node":
-    specifier: ^20.11.5
-    version: 20.11.5
+    specifier: ^20.11.6
+    version: 20.11.6
   "@typescript-eslint/eslint-plugin":
     specifier: ^6.19.1
     version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.3.3)
@@ -15,8 +15,8 @@ devDependencies:
     specifier: ^6.19.1
     version: 6.19.1(eslint@8.56.0)(typescript@5.3.3)
   dotenv:
-    specifier: ^16.3.2
-    version: 16.3.2
+    specifier: ^16.4.1
+    version: 16.4.1
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -31,7 +31,7 @@ devDependencies:
     version: 3.2.4
   ts-node:
     specifier: ^10.9.2
-    version: 10.9.2(@types/node@20.11.5)(typescript@5.3.3)
+    version: 10.9.2(@types/node@20.11.6)(typescript@5.3.3)
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -254,10 +254,10 @@ packages:
       }
     dev: true
 
-  /@types/node@20.11.5:
+  /@types/node@20.11.6:
     resolution:
       {
-        integrity: sha512-g557vgQjUUfN76MZAN/dt1z3dzcUsimuysco0KeluHgrPdJXkP/XdAURgyO2W9fZWHRtRBiVKzKn8vyOAwlG+w==,
+        integrity: sha512-+EOokTnksGVgip2PbYbr3xnR7kZigh4LbybAfBAw5BpnQ+FqBYUsvCEjYd70IXKlbohQ64mzEYmMtlWUY8q//Q==,
       }
     dependencies:
       undici-types: 5.26.5
@@ -668,10 +668,10 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dotenv@16.3.2:
+  /dotenv@16.4.1:
     resolution:
       {
-        integrity: sha512-HTlk5nmhkm8F6JcdXvHIzaorzCoziNQT9mGxLPVXW8wJF1TiGSL60ZGB4gHWabHOaMmWmhvk2/lPHfnBiT78AQ==,
+        integrity: sha512-CjA3y+Dr3FyFDOAMnxZEGtnW9KBR2M0JvvUtXNW+dYJL5ROWxP9DUHCwgFqpMk0OXCc0ljhaNTr2w/kutYIcHQ==,
       }
     engines: { node: ">=12" }
     dev: true
@@ -1484,7 +1484,7 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /ts-node@10.9.2(@types/node@20.11.5)(typescript@5.3.3):
+  /ts-node@10.9.2(@types/node@20.11.6)(typescript@5.3.3):
     resolution:
       {
         integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==,
@@ -1506,7 +1506,7 @@ packages:
       "@tsconfig/node12": 1.0.11
       "@tsconfig/node14": 1.0.3
       "@tsconfig/node16": 1.0.4
-      "@types/node": 20.11.5
+      "@types/node": 20.11.6
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3

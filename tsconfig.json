@@ -10,5 +10,5 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "files": ["./scripts/sign.ts", "./scripts/execute.ts"]
+  "files": ["./scripts/sign.ts", "./scripts/execute.ts", "eslint.config.js"]
 }

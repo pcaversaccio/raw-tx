@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
-    "@types/node": "^20.11.18",
+    "@types/node": "^20.11.19",
     "dotenv": "^16.4.4",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",

@@ -20,13 +20,13 @@
   "devDependencies": {
     "@eslint/js": "^8.56.0",
     "@types/node": "^20.11.19",
-    "dotenv": "^16.4.4",
+    "dotenv": "^16.4.5",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "ethers": "^6.11.1",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
-    "typescript-eslint": "^7.0.1"
+    "typescript-eslint": "^7.0.2"
   }
 }

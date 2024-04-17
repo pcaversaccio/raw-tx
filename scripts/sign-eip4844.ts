@@ -125,8 +125,8 @@ export async function sign() {
     );
     if (signedTx.blobs != null && signedTx.blobs.length != 0) {
       console.log("- blobs:");
-      for (let i = 0; i < signedTx.blobs.length; ++i) {
-        console.log(signedTx.blobs[i]);
+      for (const blob of signedTx.blobs) {
+        console.log(blob);
       }
     } else {
       console.log("- blobs: " + `${GREEN}${null}${RESET}`);

@@ -3,7 +3,7 @@
 [![👮‍♂️ Sanity checks](https://github.com/pcaversaccio/raw-tx/actions/workflows/checks.yml/badge.svg)](https://github.com/pcaversaccio/raw-tx/actions/workflows/checks.yml)
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-blue.svg)](http://www.wtfpl.net/about/)
 
-Two scripts to [generate](./scripts/sign.ts) and [execute](./scripts/execute.ts) a signed raw transaction with [ethers](https://docs.ethers.org/v6/).
+Three scripts to ordinary [generate](./scripts/sign.ts), [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844)-type [generate](./scripts/sign-eip4844.ts), and [execute](./scripts/execute.ts) a signed raw transaction with [ethers](https://docs.ethers.org/v6/).
 
 ## Installation
 
@@ -32,7 +32,7 @@ RPC_PROVIDER=https://rpc.ankr.com/eth_goerli
 
 ## Generate a Signed Raw Transaction
 
-Configure the placeholder payload in [`sign`](./scripts/sign.ts) according to your needs and run:
+Configure the placeholder(s) payload in [`sign`](./scripts/sign.ts) or [`sign-eip4844`](./scripts/sign-eip4844.ts) according to your needs and run:
 
 ```console
 pnpm generate

@@ -3,7 +3,7 @@ import path from "path";
 import * as dotenv from "dotenv";
 
 import { ethers } from "ethers";
-// import the serialised signed transaction generated via `sign.ts`
+// import the serialised signed transaction generated via `sign.ts` or `sign-eip4844.ts`
 import signedTx from "./out/signed_serialised_transaction.json";
 
 dotenv.config();

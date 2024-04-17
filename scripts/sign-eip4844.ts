@@ -1,8 +1,14 @@
+// `ethers.js` added EIP-4844 (https://eips.ethereum.org/EIPS/eip-4844) broadcast support
+// via `v6.12.0` (https://github.com/ethers-io/ethers.js/releases/tag/v6.12.0)
+// also, see https://github.com/ethers-io/ethers.js/issues/4650#issuecomment-2023747487
+// note that KZG = Kate, Zaverucha, and Goldberg (https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf)
+
 import * as fs from "fs";
 import path from "path";
 import * as dotenv from "dotenv";
 
 import { ethers, Transaction } from "ethers";
+import { loadKZG } from "kzg-wasm";
 
 dotenv.config();
 
@@ -27,6 +33,10 @@ export async function sign() {
       "Using wallet address: " + `${GREEN}${wallet.address}${RESET}\n`,
     );
 
+    // you need this to generate the KZG commitments and proofs
+    // if you have already computed these elsewhere, skip this step
+    const kzg = await loadKZG();
+
     // get the best fee guesses
     const feeData = await provider.getFeeData();
 
@@ -39,7 +49,7 @@ export async function sign() {
     tx.maxFeePerGas = feeData.maxFeePerGas;
     tx.data = "0x5468697320697320612074657374207472616e73616374696f6e21";
     tx.nonce = await provider.getTransactionCount(wallet.getAddress());
-    tx.type = 2;
+    tx.type = 3;
     tx.chainId = 11_155_111;
     tx.accessList = [
       {
@@ -50,7 +60,14 @@ export async function sign() {
         ],
       },
     ];
-
+    tx.maxFeePerBlobGas = 400_000_000_000;
+    // set the KZG library
+    // you only need this if you don't specify already fully-valid BLOBs
+    tx.kzg = kzg;
+    // your BLOBs; these will get padded and use `kzg` to compute the commitments and proofs
+    // if you already have the commitment and proofs, you can omit the `kzg` property below and
+    // can pass in the `{ data, commitment, proof }` object
+    tx.blobs = [ethers.toUtf8Bytes("Long live the BLOBs!")];
     // sign the transaction
     const signedTx = Transaction.from(await wallet.signTransaction(tx));
 
@@ -99,6 +116,21 @@ export async function sign() {
       console.log("- accessList: " + `${GREEN}${null}${RESET}`);
     }
     console.log("- chainId: " + `${GREEN}${signedTx.chainId}${RESET}`);
+    console.log(
+      "- maxFeePerBlobGas: " + `${GREEN}${signedTx.maxFeePerBlobGas}${RESET}`,
+    );
+    console.log(
+      "- blobVersionedHashes: " +
+        `${GREEN}${signedTx.blobVersionedHashes}${RESET}`,
+    );
+    if (signedTx.blobs != null && signedTx.blobs.length != 0) {
+      console.log("- blobs:");
+      for (let i = 0; i < signedTx.blobs.length; ++i) {
+        console.log(signedTx.blobs[i]);
+      }
+    } else {
+      console.log("- blobs: " + `${GREEN}${null}${RESET}`);
+    }
     console.log("- serialised: " + `${GREEN}${signedTx.serialized}${RESET}`); // use this output to broadcast a raw transaction using e.g. Etherscan
     console.log(
       "- unsignedSerialised: " +

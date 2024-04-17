@@ -11,5 +11,10 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "files": ["./scripts/sign.ts", "./scripts/execute.ts", "eslint.config.js"]
+  "files": [
+    "./scripts/sign.ts",
+    "./scripts/sign-eip4844.ts",
+    "./scripts/execute.ts",
+    "eslint.config.js"
+  ]
 }

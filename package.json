@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "generate": "npx ts-node ./scripts/sign.ts",
+    "generate:eip4844": "npx ts-node ./scripts/sign-eip4844.ts",
     "execute": "npx ts-node ./scripts/execute.ts",
     "prettier:check": "npx prettier -c \"**/*.{ts,md,json,yml,yaml}\"",
     "prettier:fix": "npx prettier -w \"**/*.{ts,md,json,yml,yaml}\"",
@@ -23,7 +24,8 @@
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
-    "ethers": "^6.11.1",
+    "ethers": "^6.12.0",
+    "kzg-wasm": "^0.3.1",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",

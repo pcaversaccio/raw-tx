@@ -8,8 +8,8 @@ importers:
   .:
     devDependencies:
       "@eslint/js":
-        specifier: ^9.0.0
-        version: 9.0.0
+        specifier: ^9.1.1
+        version: 9.1.1
       "@types/node":
         specifier: ^20.12.7
         version: 20.12.7
@@ -26,8 +26,8 @@ importers:
         specifier: ^6.12.0
         version: 6.12.0
       kzg-wasm:
-        specifier: ^0.3.1
-        version: 0.3.1
+        specifier: ^0.4.0
+        version: 0.4.0
       prettier:
         specifier: ^3.2.5
         version: 3.2.5
@@ -92,10 +92,10 @@ packages:
       }
     engines: { node: ^12.22.0 || ^14.17.0 || >=16.0.0 }
 
-  "@eslint/js@9.0.0":
+  "@eslint/js@9.1.1":
     resolution:
       {
-        integrity: sha512-RThY/MnKrhubF6+s1JflwUjPEsnCEmYCWwqa/aRISKWNXGZ9epUwft4bUMM35SdKF9xvBrLydAM1RDHd1Z//ZQ==,
+        integrity: sha512-5WoDz3Y19Bg2BnErkZTp0en+c/i9PvgFS7MBe1+m60HjFr0hrphlAGp4yzI7pxpt4xShln4ZyYp4neJm8hmOkQ==,
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
 
@@ -789,10 +789,10 @@ packages:
         integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==,
       }
 
-  kzg-wasm@0.3.1:
+  kzg-wasm@0.4.0:
     resolution:
       {
-        integrity: sha512-TBiRFwZnJvxVqotSg1cpPrr7u2qYZdzK0MIc2gNqoIS5TMuSIGzrTlNxkukcYgEeC6SIsBIudL2gkXtoEIOHgA==,
+        integrity: sha512-hKEwFbKrY1LZnAH5gY8+PlVWfkGnj2wd2tc83eIgzuC4NoshXqplW9OzGlBDqpAmXxwhiN8fgPG2+NcvUIBSwg==,
       }
 
   levn@0.4.1:
@@ -1220,7 +1220,7 @@ snapshots:
 
   "@eslint/js@8.57.0": {}
 
-  "@eslint/js@9.0.0": {}
+  "@eslint/js@9.1.1": {}
 
   "@humanwhocodes/config-array@0.11.14":
     dependencies:
@@ -1656,7 +1656,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  kzg-wasm@0.3.1: {}
+  kzg-wasm@0.4.0: {}
 
   levn@0.4.1:
     dependencies:

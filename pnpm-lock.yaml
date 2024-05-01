@@ -23,8 +23,8 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
       ethers:
-        specifier: ^6.12.0
-        version: 6.12.0
+        specifier: ^6.12.1
+        version: 6.12.1
       kzg-wasm:
         specifier: ^0.4.0
         version: 0.4.0
@@ -559,10 +559,10 @@ packages:
       }
     engines: { node: ">=0.10.0" }
 
-  ethers@6.12.0:
+  ethers@6.12.1:
     resolution:
       {
-        integrity: sha512-zL5NlOTjML239gIvtVJuaSk0N9GQLi1Hom3ZWUszE5lDTQE/IVB62mrPkQ2W1bGcZwVGSLaetQbWNQSvI4rGDQ==,
+        integrity: sha512-j6wcVoZf06nqEcBbDWkKg8Fp895SS96dSnTCjiXT+8vt2o02raTn4Lo9ERUuIVU5bAjoPYeA+7ytQFexFmLuVw==,
       }
     engines: { node: ">=14.0.0" }
 
@@ -1524,7 +1524,7 @@ snapshots:
 
   esutils@2.0.3: {}
 
-  ethers@6.12.0:
+  ethers@6.12.1:
     dependencies:
       "@adraffy/ens-normalize": 1.10.1
       "@noble/curves": 1.2.0

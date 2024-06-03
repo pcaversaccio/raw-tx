@@ -20,11 +20,11 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.4.0",
-    "@types/node": "^20.13.0",
+    "@types/node": "^20.14.0",
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
-    "ethers": "^6.12.1",
+    "ethers": "^6.12.2",
     "kzg-wasm": "^0.4.0",
     "prettier": "^3.3.0",
     "ts-node": "^10.9.2",

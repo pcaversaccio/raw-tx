@@ -20,14 +20,14 @@
     "lint:fix": "pnpm prettier:fix && npx eslint . --fix"
   },
   "devDependencies": {
-    "@eslint/js": "^9.20.0",
-    "@types/node": "^22.13.4",
+    "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.5",
     "dotenv": "^16.4.7",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.1",
     "ethers": "^6.13.5",
     "kzg-wasm": "^0.4.0",
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.24.1"

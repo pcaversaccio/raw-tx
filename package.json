@@ -9,7 +9,7 @@
   ],
   "author": "Pascal Marco Caversaccio <pascal.caversaccio@hotmail.ch>",
   "license": "WTFPL",
-  "packageManager": "pnpm@10.6.4",
+  "packageManager": "pnpm@10.6.5",
   "scripts": {
     "generate": "npx ts-node ./scripts/sign.ts",
     "generate:eip4844": "npx ts-node ./scripts/sign-eip4844.ts",
@@ -20,16 +20,16 @@
     "lint:fix": "pnpm prettier:fix && npx eslint . --fix"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
-    "@types/node": "^22.13.10",
+    "@eslint/js": "^9.23.0",
+    "@types/node": "^22.13.11",
     "dotenv": "^16.4.7",
-    "eslint": "^9.22.0",
+    "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "ethers": "^6.13.5",
     "kzg-wasm": "^0.4.0",
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1"
+    "typescript-eslint": "^8.27.0"
   }
 }

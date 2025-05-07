@@ -10,6 +10,12 @@ import * as dotenv from "dotenv";
 import { ethers, Transaction } from "ethers";
 import { loadKZG } from "kzg-wasm";
 
+// an alternative way to generate the KZG commitments and proofs is by using
+// `micro-ecc-signer` (see https://github.com/ethers-io/ethers.js/issues/4841#issuecomment-2856853033):
+// import { KZG } from "micro-eth-signer/kzg";
+// import { trustedSetup } from "@paulmillr/trusted-setups/fast.js";
+// tx.kzg = new KZG(trustedSetup);
+
 dotenv.config();
 
 // colour codes for terminal prints

@@ -41,7 +41,7 @@ export async function sign() {
     tx.gasLimit = 100_000;
     tx.maxPriorityFeePerGas = feeData.maxPriorityFeePerGas;
     tx.maxFeePerGas = feeData.maxFeePerGas;
-    tx.data = "0x5468697320697320612074657374207472616e73616374696f6e21";
+    tx.data = "0x84b0196e"; // specify the method called at the `authDelegator` address (currently set to `eip712Domain`)
     tx.nonce = await provider.getTransactionCount(wallet.getAddress());
     tx.type = 4;
     tx.chainId = 11_155_111;
@@ -62,7 +62,9 @@ export async function sign() {
     // if omitted the current provider is used to get the `nonce` and `chainId`
     // a `chainId` of 0 must be explicitly set.
     const authChainId = tx.chainId;
-    const authNonce = tx.nonce;
+    // increment by 1 if the signer is the actor signing the authorisation and sending the transaction
+    // see https://github.com/ethers-io/ethers.js/issues/4916#issuecomment-2711500374
+    const authNonce = tx.nonce + 1;
 
     const auth = await wallet.authorize({
       address: authDelegator,
@@ -121,21 +123,12 @@ export async function sign() {
       console.log("- accessList: " + `${GREEN}${null}${RESET}`);
     }
     console.log("- chainId: " + `${GREEN}${signedTx.chainId}${RESET}`);
-    console.log(
-      "- maxFeePerBlobGas: " + `${GREEN}${signedTx.maxFeePerBlobGas}${RESET}`,
-    );
-    console.log(
-      "- blobVersionedHashes: " +
-        `${GREEN}${signedTx.blobVersionedHashes}${RESET}`,
-    );
-    if (signedTx.blobs != null && signedTx.blobs.length != 0) {
-      console.log("- blobs:");
-      for (const blob of signedTx.blobs) {
-        console.log(blob);
-      }
-    } else {
-      console.log("- blobs: " + `${GREEN}${null}${RESET}`);
-    }
+    console.log("- authDelegator: " + `${GREEN}${auth.address}${RESET}`);
+    console.log("- authChainId: " + `${GREEN}${auth.chainId}${RESET}`);
+    console.log("- authNonce: " + `${GREEN}${auth.nonce}${RESET}`);
+    console.log("- v (auth): " + `${GREEN}${auth.signature?.v}${RESET}`);
+    console.log("- r (auth): " + `${GREEN}${auth.signature?.r}${RESET}`);
+    console.log("- s (auth): " + `${GREEN}${auth.signature?.s}${RESET}`);
     console.log("- serialised: " + `${GREEN}${signedTx.serialized}${RESET}`); // use this output to broadcast a raw transaction using e.g. Etherscan
     console.log(
       "- unsignedSerialised: " +

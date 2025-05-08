@@ -1,7 +1,7 @@
 {
   "name": "raw-tx",
   "version": "1.0.0",
-  "description": "Two scripts to generate and execute a signed raw transaction with ethers.",
+  "description": "Four scripts to ordinary generate, EIP-4844-type generate, EIP-7702-type generate, and execute a signed raw transaction with ethers.",
   "main": "sign.ts",
   "keywords": [
     "raw-transaction",
@@ -13,6 +13,7 @@
   "scripts": {
     "generate": "npx ts-node ./scripts/sign.ts",
     "generate:eip4844": "npx ts-node ./scripts/sign-eip4844.ts",
+    "generate:eip7702": "npx ts-node ./scripts/sign-eip7702.ts",
     "execute": "npx ts-node ./scripts/execute.ts",
     "prettier:check": "npx prettier -c \"**/*.{ts,md,json,yml,yaml}\"",
     "prettier:fix": "npx prettier -w \"**/*.{ts,md,json,yml,yaml}\"",
@@ -21,7 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
-    "@types/node": "^22.15.15",
+    "@types/node": "^22.15.16",
     "dotenv": "^16.5.0",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.3",

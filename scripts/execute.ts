@@ -6,7 +6,7 @@ import { ethers } from "ethers";
 // import the serialised signed transaction generated via `sign.ts` or `sign-eip4844.ts`
 import signedTx from "./out/signed_serialised_transaction.json";
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 // colour codes for terminal prints
 const RESET = "\x1b[0m";

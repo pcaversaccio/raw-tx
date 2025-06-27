@@ -16,7 +16,7 @@ import { loadKZG } from "kzg-wasm";
 // import { trustedSetup } from "@paulmillr/trusted-setups/fast.js";
 // tx.kzg = new KZG(trustedSetup);
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 // colour codes for terminal prints
 const RESET = "\x1b[0m";

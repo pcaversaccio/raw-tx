@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 
 import { ethers, Transaction } from "ethers";
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 // colour codes for terminal prints
 const RESET = "\x1b[0m";

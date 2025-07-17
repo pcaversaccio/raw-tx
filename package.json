@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.31.0",
-    "@types/node": "^24.0.13",
+    "@types/node": "^24.0.14",
     "dotenv": "^17.2.0",
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.5",

@@ -1,19 +1,31 @@
 // `ethers.js` added EIP-4844 (https://eips.ethereum.org/EIPS/eip-4844) broadcast support
 // via `v6.12.0` (https://github.com/ethers-io/ethers.js/releases/tag/v6.12.0)
 // also, see https://github.com/ethers-io/ethers.js/issues/4650#issuecomment-2023747487
+// `ethers.js` added EIP-7594 (https://eips.ethereum.org/EIPS/eip-7594) broadcast support
+// via `v6.16.0` (https://github.com/ethers-io/ethers.js/releases/tag/v6.16.0)
+// also, see https://github.com/ethers-io/ethers.js/issues/5062#issuecomment-3578970533
 // note that KZG = Kate, Zaverucha, and Goldberg (https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf)
 
 import * as fs from "fs";
 import path from "path";
 import * as dotenv from "dotenv";
 
-import { ethers, Transaction } from "ethers";
+import {
+  JsonRpcProvider,
+  Wallet,
+  Transaction,
+  parseEther,
+  hexlify,
+  toUtf8Bytes,
+  concat,
+} from "ethers";
 import { loadKZG } from "kzg-wasm";
 
 // an alternative way to generate the KZG commitments and proofs is by using
-// `micro-ecc-signer` (see https://github.com/ethers-io/ethers.js/issues/4841#issuecomment-2856853033):
-// import { KZG } from "micro-eth-signer/kzg";
-// import { trustedSetup } from "@paulmillr/trusted-setups/fast.js";
+// `micro-eth-signer` (https://github.com/paulmillr/micro-eth-signer):
+// import { KZG } from "micro-eth-signer/advanced/kzg.js";
+// import { trustedSetup } from "@paulmillr/trusted-setups/small-kzg.js"; // for EIP-4844
+// import { trustedSetup } from "@paulmillr/trusted-setups/fast-peerdas.js"; // for EIP-7594
 // tx.kzg = new KZG(trustedSetup);
 
 dotenv.config({ quiet: true });
@@ -32,8 +44,8 @@ export async function sign() {
       process.env.PRIVATE_KEY !== undefined ? process.env.PRIVATE_KEY : ""; // load your private key via a `.env` file
     const rpc =
       process.env.RPC_PROVIDER !== undefined ? process.env.RPC_PROVIDER : ""; // load your RPC provider via a `.env` file
-    const provider = new ethers.JsonRpcProvider(rpc);
-    const wallet = new ethers.Wallet(privateKey, provider);
+    const provider = new JsonRpcProvider(rpc);
+    const wallet = new Wallet(privateKey, provider);
 
     console.log(
       "Using wallet address: " + `${GREEN}${wallet.address}${RESET}\n`,
@@ -49,7 +61,7 @@ export async function sign() {
     // example payload - configure according to your needs
     const tx = new Transaction();
     tx.to = "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03";
-    tx.value = ethers.parseEther("0");
+    tx.value = parseEther("0");
     tx.gasLimit = 50_000;
     tx.maxPriorityFeePerGas = feeData.maxPriorityFeePerGas;
     tx.maxFeePerGas = feeData.maxFeePerGas;
@@ -67,13 +79,24 @@ export async function sign() {
       },
     ];
     tx.maxFeePerBlobGas = 400_000_000_000;
+    // enable EIP-7594 support
+    tx.blobWrapperVersion = 1;
     // set the KZG library
     // you only need this if you don't specify already fully-valid BLOBs
-    tx.kzg = kzg;
+    // tx.kzg = kzg;
+    // specfiy the fully-valid BLOB array: 32 (`BYTES_PER_FIELD_ELEMENT`) * 4096 (`FIELD_ELEMENTS_PER_BLOB`)
+    const blob = new Uint8Array(32 * 4_096);
+    const data = toUtf8Bytes("Long live the BLOBs!");
+    blob.set(data, 0);
+    const blobHex = hexlify(blob);
+    const commitment = kzg.blobToKZGCommitment(blobHex);
+    // concatenate the 128 cell KZG proofs
+    const proof = concat(kzg.computeCellsAndKZGProofs(blobHex).proofs);
     // your BLOBs; these will get padded and use `kzg` to compute the commitments and proofs
-    // if you already have the commitment and proofs, you can omit the `kzg` property below and
-    // can pass in the `{ data, commitment, proof }` object
-    tx.blobs = [ethers.toUtf8Bytes("Long live the BLOBs!")];
+    // tx.blobs = [data];
+    // if you already have the commitment and proofs, you can omit the `kzg` property above and
+    // can pass in the `{ data: data, commitment: commitment, proof: proof }` object
+    tx.blobs = [{ data: data, commitment: commitment, proof: proof }];
     // sign the transaction
     const signedTx = Transaction.from(await wallet.signTransaction(tx));
 

@@ -2,7 +2,7 @@ import * as fs from "fs";
 import path from "path";
 import * as dotenv from "dotenv";
 
-import { ethers, Transaction } from "ethers";
+import { JsonRpcProvider, Wallet, Transaction, parseEther } from "ethers";
 
 dotenv.config({ quiet: true });
 
@@ -20,8 +20,8 @@ export async function sign() {
       process.env.PRIVATE_KEY !== undefined ? process.env.PRIVATE_KEY : ""; // load your private key via a `.env` file
     const rpc =
       process.env.RPC_PROVIDER !== undefined ? process.env.RPC_PROVIDER : ""; // load your RPC provider via a `.env` file
-    const provider = new ethers.JsonRpcProvider(rpc);
-    const wallet = new ethers.Wallet(privateKey, provider);
+    const provider = new JsonRpcProvider(rpc);
+    const wallet = new Wallet(privateKey, provider);
 
     console.log(
       "Using wallet address: " + `${GREEN}${wallet.address}${RESET}\n`,
@@ -33,7 +33,7 @@ export async function sign() {
     // example payload - configure according to your needs
     const tx = new Transaction();
     tx.to = "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03";
-    tx.value = ethers.parseEther("0");
+    tx.value = parseEther("0");
     tx.gasLimit = 50_000;
     tx.maxPriorityFeePerGas = feeData.maxPriorityFeePerGas;
     tx.maxFeePerGas = feeData.maxFeePerGas;

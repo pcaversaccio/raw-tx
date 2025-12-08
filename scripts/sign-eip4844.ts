@@ -84,7 +84,7 @@ export async function sign() {
     // set the KZG library
     // you only need this if you don't specify already fully-valid BLOBs
     // tx.kzg = kzg;
-    // specfiy the fully-valid BLOB array: 32 (`BYTES_PER_FIELD_ELEMENT`) * 4096 (`FIELD_ELEMENTS_PER_BLOB`)
+    // specify the fully-valid BLOB array: 32 (`BYTES_PER_FIELD_ELEMENT`) * 4096 (`FIELD_ELEMENTS_PER_BLOB`)
     const blob = new Uint8Array(32 * 4_096);
     const data = toUtf8Bytes("Long live the BLOBs!");
     blob.set(data, 0);

@@ -3,7 +3,7 @@
 // also, see https://github.com/ethers-io/ethers.js/issues/4650#issuecomment-2023747487
 // `ethers.js` added EIP-7594 (https://eips.ethereum.org/EIPS/eip-7594) broadcast support
 // via `v6.16.0` (https://github.com/ethers-io/ethers.js/releases/tag/v6.16.0)
-// also, see https://github.com/ethers-io/ethers.js/issues/5062#issuecomment-3578970533
+// also, see https://github.com/ethers-io/ethers.js/issues/5062#issuecomment-3629880699
 // note that KZG = Kate, Zaverucha, and Goldberg (https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf)
 
 import * as fs from "fs";

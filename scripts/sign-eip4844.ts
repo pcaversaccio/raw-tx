@@ -95,8 +95,8 @@ export async function sign() {
     // your BLOBs; these will get padded and use `kzg` to compute the commitments and proofs
     // tx.blobs = [data];
     // if you already have the commitment and proofs, you can omit the `kzg` property above and
-    // can pass in the `{ data: data, commitment: commitment, proof: proof }` object
-    tx.blobs = [{ data: data, commitment: commitment, proof: proof }];
+    // can pass in the `{ data: blobHex, commitment: commitment, proof: proof }` object
+    tx.blobs = [{ data: blobHex, commitment: commitment, proof: proof }];
     // sign the transaction
     const signedTx = Transaction.from(await wallet.signTransaction(tx));
 

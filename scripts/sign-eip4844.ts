@@ -15,8 +15,8 @@ import {
   Wallet,
   Transaction,
   parseEther,
-  hexlify,
   toUtf8Bytes,
+  hexlify,
   concat,
 } from "ethers";
 import { loadKZG } from "kzg-wasm";

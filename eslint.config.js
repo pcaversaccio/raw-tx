@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const eslint = require("@eslint/js");
-const globals = require("globals");
-const { defineConfig } = require("eslint/config");
 const tseslint = require("typescript-eslint");
 const eslintConfigPrettier = require("eslint-config-prettier");
+const globals = require("globals");
+const { defineConfig } = require("eslint/config");
 /* eslint-enable @typescript-eslint/no-require-imports */
 
 module.exports = defineConfig(

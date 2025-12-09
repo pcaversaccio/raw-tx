@@ -2,8 +2,8 @@ import * as fs from "fs";
 import path from "path";
 import * as dotenv from "dotenv";
 
-import { ethers } from "ethers";
-// import the serialised signed transaction generated via `sign.ts` or `sign-eip4844.ts`
+import { JsonRpcProvider } from "ethers";
+// import the serialised signed transaction generated via `sign.ts`, `sign-eip4844.ts`, or `sign-eip7702.ts`
 import signedTx from "./out/signed_serialised_transaction.json";
 
 dotenv.config({ quiet: true });
@@ -20,7 +20,7 @@ export async function execute() {
   // load your RPC provider via a `.env` file
   const rpc =
     process.env.RPC_PROVIDER !== undefined ? process.env.RPC_PROVIDER : "";
-  const provider = new ethers.JsonRpcProvider(rpc);
+  const provider = new JsonRpcProvider(rpc);
   try {
     // send the transaction
     const tx = await provider.broadcastTransaction(signedTx);

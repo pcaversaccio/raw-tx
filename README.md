@@ -32,7 +32,7 @@ RPC_PROVIDER=https://rpc.ankr.com/eth_goerli
 
 ## Generate a Signed Raw Transaction
 
-Configure the placeholder(s) payload in [`sign`](./scripts/sign.ts), [`sign-eip4844`](./scripts/sign-eip4844.ts), or [`sign-eip7702`](./scripts/sign-eip7702.ts) according to your needs and run:
+Configure the placeholder(s) payload in [`sign`](./scripts/sign.ts), [`sign-eip4844`](./scripts/sign-eip4844.ts)[^1], or [`sign-eip7702`](./scripts/sign-eip7702.ts) according to your needs and run:
 
 ```console
 pnpm generate
@@ -61,3 +61,5 @@ pnpm execute
 ```
 
 If the transaction is successful, it saves a file `transaction_receipt.json` or in case of a failure a file `transaction_error.json` in the `scripts/out` directory.
+
+[^1]: The [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844)-type [`sign-eip4844`](https://github.com/pcaversaccio/raw-tx/blob/main/scripts/sign-eip4844.ts) script is compatible with PeerDAS [EIP-7594](https://eips.ethereum.org/EIPS/eip-7594).

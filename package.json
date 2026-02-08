@@ -7,22 +7,22 @@
     "raw-transaction",
     "ethers"
   ],
-  "author": "Pascal Marco Caversaccio <pascal.caversaccio@hotmail.ch>",
+  "author": "pcaversaccio",
   "license": "WTFPL",
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.29.1",
   "scripts": {
-    "generate": "npx ts-node ./scripts/sign.ts",
-    "generate:eip4844": "npx ts-node ./scripts/sign-eip4844.ts",
-    "generate:eip7702": "npx ts-node ./scripts/sign-eip7702.ts",
-    "execute": "npx ts-node ./scripts/execute.ts",
-    "prettier:check": "npx prettier -c \"**/*.{ts,md,json,yml,yaml}\"",
-    "prettier:fix": "npx prettier -w \"**/*.{ts,md,json,yml,yaml}\"",
-    "lint:check": "pnpm prettier:check && npx eslint .",
-    "lint:fix": "pnpm prettier:fix && npx eslint . --fix"
+    "generate": "ts-node ./scripts/sign.ts",
+    "generate:eip4844": "ts-node ./scripts/sign-eip4844.ts",
+    "generate:eip7702": "ts-node ./scripts/sign-eip7702.ts",
+    "execute": "ts-node ./scripts/execute.ts",
+    "prettier:check": "prettier -c \"**/*.{ts,md,json,yml,yaml}\"",
+    "prettier:fix": "prettier -w \"**/*.{ts,md,json,yml,yaml}\"",
+    "lint:check": "pnpm prettier:check && eslint .",
+    "lint:fix": "pnpm prettier:fix && eslint . --fix"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
-    "@types/node": "^25.2.1",
+    "@types/node": "^25.2.2",
     "dotenv": "^17.2.4",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",

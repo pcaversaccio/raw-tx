@@ -9,7 +9,7 @@
   ],
   "author": "pcaversaccio",
   "license": "WTFPL",
-  "packageManager": "pnpm@10.29.3",
+  "packageManager": "pnpm@10.30.0",
   "scripts": {
     "generate": "ts-node ./scripts/sign.ts",
     "generate:eip4844": "ts-node ./scripts/sign-eip4844.ts",

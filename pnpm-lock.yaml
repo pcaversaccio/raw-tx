@@ -12,8 +12,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.0.2(jiti@2.6.1))
       '@types/node':
-        specifier: ^25.3.3
-        version: 25.3.3
+        specifier: ^25.3.5
+        version: 25.3.5
       dotenv:
         specifier: ^17.3.1
         version: 17.3.1
@@ -37,7 +37,7 @@ importers:
         version: 3.8.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@25.3.3)(typescript@5.9.3)
+        version: 10.9.2(@types/node@25.3.5)(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -150,8 +150,8 @@ packages:
   '@types/node@22.7.5':
     resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
 
-  '@types/node@25.3.3':
-    resolution: {integrity: sha512-DpzbrH7wIcBaJibpKo9nnSQL0MTRdnWttGyE5haGwK86xgMOkFLp7vEyfQPGLOJh5wNYiJ3V9PmUMDhV9u8kkQ==}
+  '@types/node@25.3.5':
+    resolution: {integrity: sha512-oX8xrhvpiyRCQkG1MFchB09f+cXftgIXb3a7UUa4Y3wpmZPw5tyZGTLWhlESOLq1Rq6oDlc8npVU2/9xiCuXMA==}
 
   '@typescript-eslint/eslint-plugin@8.56.1':
     resolution: {integrity: sha512-Jz9ZztpB37dNC+HU2HI28Bs9QXpzCz+y/twHOwhyrIRdbuVDxSytJNDl6z/aAKlaRIwC7y8wJdkBv7FxYGgi0A==}
@@ -650,7 +650,7 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/node@25.3.3':
+  '@types/node@25.3.5':
     dependencies:
       undici-types: 7.18.2
 
@@ -1001,14 +1001,14 @@ snapshots:
     dependencies:
       typescript: 5.9.3
 
-  ts-node@10.9.2(@types/node@25.3.3)(typescript@5.9.3):
+  ts-node@10.9.2(@types/node@25.3.5)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.12
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 25.3.3
+      '@types/node': 25.3.5
       acorn: 8.16.0
       acorn-walk: 8.3.5
       arg: 4.1.3

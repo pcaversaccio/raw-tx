@@ -27,7 +27,7 @@
     "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
     "ethers": "^6.17.0",
-    "globals": "^17.6.0",
+    "globals": "^17.7.0",
     "kzg-wasm": "^1.0.0",
     "prettier": "^3.8.4",
     "ts-node": "^10.9.2",

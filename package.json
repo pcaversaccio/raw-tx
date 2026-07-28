@@ -9,7 +9,7 @@
   ],
   "author": "pcaversaccio",
   "license": "WTFPL",
-  "packageManager": "pnpm@11.15.1",
+  "packageManager": "pnpm@11.17.0",
   "scripts": {
     "generate": "ts-node ./scripts/sign.ts",
     "generate:eip4844": "ts-node ./scripts/sign-eip4844.ts",
@@ -29,9 +29,9 @@
     "ethers": "^6.17.0",
     "globals": "^17.7.0",
     "kzg-wasm": "^1.0.0",
-    "prettier": "^3.9.5",
+    "prettier": "^3.9.6",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.64.0"
+    "typescript-eslint": "^8.65.0"
   }
 }

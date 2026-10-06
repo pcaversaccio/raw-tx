@@ -9,7 +9,7 @@
   ],
   "author": "pcaversaccio",
   "license": "WTFPL",
-  "packageManager": "pnpm@12.6.0",
+  "packageManager": "pnpm@12.8.1",
   "scripts": {
     "generate": "ts-node ./scripts/sign.ts",
     "generate:eip4844": "ts-node ./scripts/sign-eip4844.ts",
@@ -22,8 +22,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@types/node": "^26.6.2",
-    "dotenv": "^17.4.2",
+    "@types/node": "^26.6.3",
+    "dotenv": "^18.0.4",
     "eslint": "^10.11.0",
     "eslint-config-prettier": "^10.1.8",
     "ethers": "^6.17.0",
@@ -32,6 +32,6 @@
     "prettier": "^3.9.9",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.70.1"
+    "typescript-eslint": "^8.71.0"
   }
 }
